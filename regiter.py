@@ -18,7 +18,7 @@ filemode =  'a'
 def F_Leer(LV_NombreArchivo):
     with open(LV_NombreArchivo, "rb") as f:
         for linea in f:
-            print("\n",linea.decode(),end = "\n")
+            print("\n",linea.decode("utf-8"),end = "\n")
 
 def F_Escribir(LV_NombreArchivo):
     with open(LV_NombreArchivo, "a") as file_object:
