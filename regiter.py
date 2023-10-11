@@ -13,6 +13,7 @@ format='Fecha:%(asctime)s - User:%(name)s - %(message)s - %(levelname)s',
 filename = 'Register_Log.log',
 filemode =  'a'
 )
+
 # declarar funciones
 def F_Leer(LV_NombreArchivo):
     with open(LV_NombreArchivo, "rb") as f:
@@ -34,8 +35,8 @@ def F_Borrar():
 
 def F_Ordenar():
     print("1")
-# activar y desactivar log
 
+# activar y desactivar log
 while GV_Log != 1 and GV_Log != 0 :
         GV_Log = int(input("Activar Log?\n 1 si | 0 no :"))
         if(GV_Log == 1):
@@ -49,7 +50,6 @@ while GV_Log != 1 and GV_Log != 0 :
             print("valor para 'log switch' invalido")
         
 # funcionamiento del menu
-
 while GV_Seleccion != 0:
     GV_Seleccion = int(input("\nQue Operaacion Desea Relizar El Dia De Hoy?\n 1=leer|2=buscar|3=escribir|4=borrar|0=salir :"))
     if(GV_Seleccion == 1):
