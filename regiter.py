@@ -22,7 +22,7 @@ def F_Leer(LV_NombreArchivo):
 
 def F_Escribir(LV_NombreArchivo):
     with open(LV_NombreArchivo, "a") as file_object:
-        LV_Nombre = input("ingrese nombre completo:\n")
+        LV_Nombre = str(input("ingrese nombre completo:\n"))
         LV_ID = int(input("ingrese id:\n"))
         file_object.write("nombre:{} ".format(LV_Nombre))
         file_object.write("ID:{}\n".format(LV_ID))
