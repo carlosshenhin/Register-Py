@@ -18,12 +18,12 @@ filemode =  'a'
 def F_Leer(LV_NombreArchivo):
     with open(LV_NombreArchivo, "rb") as f:
         for linea in f:
-            print("\n",linea.decode("utf-8"),end = "\n")
+            print("\n",linea.decode(),end = "\n")
 
 def F_Escribir(LV_NombreArchivo):
     with open(LV_NombreArchivo, "a") as file_object:
         LV_Nombre = input("ingrese nombre completo:\n")
-        LV_ID = input("ingrese id:\n")
+        LV_ID = int(input("ingrese id:\n"))
         file_object.write("nombre:{} ".format(LV_Nombre))
         file_object.write("ID:{}\n".format(LV_ID))
 
@@ -63,8 +63,8 @@ while GV_Seleccion != 0:
     elif(GV_Seleccion == 0):
         print("Adios")
     else:
-        logging.error("caracter invalido invalido")
-
+        logging.error("Caracter invalido.")
+        print("Caracter invalido.")
 
 
 
