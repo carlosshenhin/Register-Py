@@ -1,9 +1,8 @@
 # variables globales
 GV_Log = 3
-
 GV_Seleccion = 1
-
 GV_NombreArchivo = "registro.txt"
+
 
 # configuraciones de logs
 import logging
@@ -30,8 +29,15 @@ def F_Escribir(LV_NombreArchivo):
 def F_Buscar():
     print("BUSCAR")
            
-def F_Borrar():
-    print("BORRAR")
+def F_Borrar(LV_NombreArchivo, valor):
+    valor = input("\ningrese la id del registro a borrar: ")
+
+    with open(LV_NombreArchivo, 'r') as f:
+        lineas = f.readlines()
+    with open(LV_NombreArchivo, 'w') as f:
+        for linea in lineas:
+            if valor not in linea:
+                f.write(linea)
 
 def F_Ordenar():
     print("1")
@@ -59,7 +65,7 @@ while GV_Seleccion != 0:
     elif(GV_Seleccion == 3):
         F_Escribir(GV_NombreArchivo)
     elif(GV_Seleccion == 4):
-        F_Borrar()
+        F_Borrar(GV_NombreArchivo,0)
     elif(GV_Seleccion == 0):
         print("Adios")
     else:
