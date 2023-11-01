@@ -23,11 +23,21 @@ def F_Escribir(LV_NombreArchivo):
     with open(LV_NombreArchivo, "a") as file_object:
         LV_Nombre = str(input("ingrese nombre completo:\n"))
         LV_ID = int(input("ingrese id:\n"))
-        file_object.write("nombre:{} ".format(LV_Nombre))
+        file_object.write("nombre: {} ".format(LV_Nombre))
         file_object.write("ID:{}\n".format(LV_ID))
 
-def F_Buscar():
-    print("BUSCAR")
+def F_Buscar(LV_NombreArchivo, ID):
+  ID = input("\ningrese la id del registro a buscar: ")
+ 
+  with open(LV_NombreArchivo, "r") as f:
+  
+    lineas = f.readlines()
+    for linea in lineas:
+      if ID in linea:
+        print(linea)
+        break
+    else:
+      print("La id no existe en el archivo")
            
 def F_Borrar(LV_NombreArchivo, valor):
     valor = input("\ningrese la id del registro a borrar: ")
@@ -40,7 +50,8 @@ def F_Borrar(LV_NombreArchivo, valor):
                 f.write(linea)
 
 def F_Ordenar():
-    print("1")
+    print("hola")
+  
 
 # activar y desactivar log
 while GV_Log != 1 and GV_Log != 0 :
@@ -61,7 +72,7 @@ while GV_Seleccion != 0:
     if(GV_Seleccion == 1):
         F_Leer(GV_NombreArchivo)
     elif(GV_Seleccion == 2):
-        F_Buscar()
+        F_Buscar(GV_NombreArchivo, 0)
     elif(GV_Seleccion == 3):
         F_Escribir(GV_NombreArchivo)
     elif(GV_Seleccion == 4):
